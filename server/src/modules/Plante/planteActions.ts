@@ -11,6 +11,7 @@ const add: RequestHandler = async (req, res, next) => {
     next(err);
   }
 };
+
 const browsePlant: RequestHandler = async (req, res, next) => {
   try {
     const plant = await PlanteRepository.readAll();
@@ -20,4 +21,19 @@ const browsePlant: RequestHandler = async (req, res, next) => {
   }
 };
 
-export default { add, browsePlant };
+const read: RequestHandler = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const idPlant = await PlanteRepository.read(Number(id));
+
+    if (idPlant == null) {
+      res.sendStatus(404);
+    } else {
+      res.json(idPlant);
+    }
+  } catch (err) {
+    next(err);
+  }
+};
+
+export default { add, browsePlant, read };
