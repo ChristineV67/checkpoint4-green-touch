@@ -8,8 +8,8 @@ const router = express.Router();
 
 // Define item-related routes
 import itemActions from "./modules/item/itemActions";
-import CatalogRepository from "./modules/Catalog/CatalogRepository";
-import catalogActions from "./modules/Catalog/catalogActions";
+
+import planteActions from "./modules/Plante/planteActions";
 
 router.get("/api/items", itemActions.browse);
 router.get("/api/items/:id", itemActions.read);
@@ -17,6 +17,7 @@ router.post("/api/items", itemActions.add);
 
 /* ************************************************************************* */
 
-router.post("/api/plantes", catalogActions.add);
+router.post("/api/plantes", planteActions.add);
+router.get("/api/plantes", planteActions.browsePlant);
 
 export default router;
