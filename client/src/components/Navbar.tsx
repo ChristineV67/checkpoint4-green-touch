@@ -27,7 +27,7 @@ export default function Navbar() {
           </li>
 
           <li className="hover:underline hover:underline-offset-4 text-black text-2xl">
-            <NavLink to={"/"}>Plantes de A à Z</NavLink>
+            <NavLink to={"/plantePage"}>Plantes de A à Z</NavLink>
           </li>
         </ul>{" "}
       </nav>

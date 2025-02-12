@@ -1,4 +1,5 @@
 export type PlanteType = {
+  id: number;
   nom: string;
   nom_latin: string;
   description: string;
