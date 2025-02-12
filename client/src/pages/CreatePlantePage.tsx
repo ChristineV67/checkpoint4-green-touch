@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
-import type { PlanteType } from "../../lib/definitions";
 import { toast } from "react-toastify";
+import type { PlanteType } from "../../lib/definitions";
 
 export default function CreatePlantePage() {
   const {
@@ -41,7 +41,10 @@ export default function CreatePlantePage() {
 
         <form className="space-y-4" onSubmit={handleSubmit(formSubmit)}>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label
+              htmlFor="nom"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
               Nom de la plante
             </label>
             <input
@@ -55,24 +58,30 @@ export default function CreatePlantePage() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              Nom en latin
+            <label
+              htmlFor="nom scientifique"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
+              Nom scientifique
             </label>
             <input
               type="text"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all"
-              {...register("nom_latin", {
+              {...register("nom_scientifique", {
                 required: "Le nom latin est obligatoire",
               })}
             />
-            {errors.nom_latin && (
+            {errors.nom_scientifique && (
               <p className="text-red-500 text-sm mt-1">
-                {errors.nom_latin.message}
+                {errors.nom_scientifique.message}
               </p>
             )}
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label
+              htmlFor="description"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
               Description
             </label>
             <textarea
@@ -90,7 +99,10 @@ export default function CreatePlantePage() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label
+              htmlFor="description courte"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
               Description courte
             </label>
             <textarea
@@ -108,7 +120,10 @@ export default function CreatePlantePage() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label
+              htmlFor="exposition"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
               Exposition
             </label>
             <select
@@ -125,7 +140,31 @@ export default function CreatePlantePage() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label
+              htmlFor="description exposition"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
+              Description exposition
+            </label>
+            <textarea
+              rows={2}
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all"
+              {...register("description_exposition", {
+                required: "La description est obligatoire",
+              })}
+            />
+            {errors.description_exposition && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.description_exposition.message}
+              </p>
+            )}
+          </div>
+
+          <div>
+            <label
+              htmlFor="arrosage"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
               Arrosage
             </label>
             <select
@@ -142,7 +181,31 @@ export default function CreatePlantePage() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label
+              htmlFor="description arrosage"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
+              Description arrosage
+            </label>
+            <textarea
+              rows={2}
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all"
+              {...register("description_arrosage", {
+                required: "La description est obligatoire",
+              })}
+            />
+            {errors.description_arrosage && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.description_arrosage.message}
+              </p>
+            )}
+          </div>
+
+          <div>
+            <label
+              htmlFor="entretien"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
               Entretien
             </label>
             <select
@@ -159,7 +222,31 @@ export default function CreatePlantePage() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label
+              htmlFor="description entretien"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
+              Description entretien
+            </label>
+            <textarea
+              rows={2}
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all"
+              {...register("description_entretien", {
+                required: "La description est obligatoire",
+              })}
+            />
+            {errors.description_entretien && (
+              <p className="text-red-500 text-sm mt-1">
+                {errors.description_entretien.message}
+              </p>
+            )}
+          </div>
+
+          <div>
+            <label
+              htmlFor="image url"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
               Image (URL)
             </label>
             <input

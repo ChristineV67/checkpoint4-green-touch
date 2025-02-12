@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 import type { PlanteType } from "../../lib/definitions";
 
 export default function PlantePage() {
@@ -24,9 +25,13 @@ export default function PlantePage() {
             key={d.id}
             className="border border-primary shadow-md bg-white p-3 md:p-4 rounded-lg"
           >
-            <h2 className="font-bold text-lg mb-1">{d.nom}</h2>
-            <p className="text-gray-500 italic text-sm mb-2">{d.nom_latin}</p>
-            <p className="text-gray-600 text-sm">{d.description_courte}</p>
+            <h2 className="font-bold text-lg mb-1 text-center">{d.nom}</h2>
+            <p className="text-gray-500 italic text-sm mb-2 text-center">
+              {d.nom_scientifique}
+            </p>
+            <p className="text-gray-600 text-sm text-center">
+              {d.description_courte}
+            </p>
 
             <div className="flex justify-center p-2">
               <img
@@ -37,12 +42,13 @@ export default function PlantePage() {
             </div>
 
             <div className="text-center mt-2">
-              <button
+              <NavLink
+                to={`/${d.id}`}
                 className="w-30 bg-green-700 hover:bg-amber-500 text-white font-medium py-2.5 rounded-lg transition-colors text-center"
                 type="submit"
               >
                 Voir
-              </button>
+              </NavLink>
             </div>
           </div>
         ))}
