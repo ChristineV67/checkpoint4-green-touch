@@ -3,8 +3,8 @@ export type PlanteType = {
   nom_latin: string;
   description: string;
   description_courte: string;
-  besoin_lumiere: string;
-  besoin_arrosage: string;
+  exposition: string;
+  arrosage: string;
   entretien: string;
   image_url: string;
 };
