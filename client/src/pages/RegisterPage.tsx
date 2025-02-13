@@ -1,7 +1,7 @@
+import { type ReactNode, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import type { UserType } from "../../lib/definitions";
-import { ReactNode, useRef } from "react";
 
 export default function RegisterPage() {
   const {
@@ -14,7 +14,7 @@ export default function RegisterPage() {
   const passwordRef = useRef({});
   passwordRef.current = watch("password", "");
 
-  const formSubmit = async (data) => {
+  const formSubmit = async (data: UserType) => {
     const { confirmpassword, ...rest } = data;
 
     try {
@@ -130,7 +130,7 @@ export default function RegisterPage() {
             />
 
             {errors.password && (
-              <p role="alert" className="text-red-500 text-sm mt-2">
+              <p className="text-red-500 text-sm mt-2">
                 {errors.password.message as ReactNode}
               </p>
             )}
@@ -155,7 +155,7 @@ export default function RegisterPage() {
               })}
             />
             {errors.confirmpassword && (
-              <p role="alert" className="text-red-500 text-sm mt-2">
+              <p className="text-red-500 text-sm mt-2">
                 {errors.confirmpassword.message as ReactNode}
               </p>
             )}
