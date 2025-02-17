@@ -4,6 +4,7 @@ import CreatePlantePage from "./pages/CreatePlantePage";
 import DetailPlantePage from "./pages/DetailPlantePage";
 import HomePage from "./pages/HomePage";
 import PlantePage from "./pages/PlantePage";
+import RegisterPage from "./pages/RegisterPage";
 
 export const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ export const router = createBrowserRouter([
       {
         path: "/:id",
         element: <DetailPlantePage />,
+      },
+      {
+        path: "/register",
+        element: <RegisterPage />,
       },
     ],
   },

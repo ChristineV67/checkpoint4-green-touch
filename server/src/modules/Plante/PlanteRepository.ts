@@ -65,6 +65,14 @@ class PlanteRepository {
     );
     return rows[0] as Plante;
   }
+
+  async readEmail(email: string) {
+    const [rows] = await database.query<Rows>(
+      "select (email) from user where email = ?",
+      [email],
+    );
+    return rows[0] as Plante;
+  }
 }
 
 export default new PlanteRepository();

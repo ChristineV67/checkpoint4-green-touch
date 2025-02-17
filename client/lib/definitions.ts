@@ -12,3 +12,12 @@ export type PlanteType = {
   description_entretien: string;
   image_url: string;
 };
+
+export type UserType = {
+  id: number;
+  nom: string;
+  prenom: string;
+  email: string;
+  password: string;
+  confirmpassword: string;
+};
